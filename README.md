@@ -54,15 +54,15 @@
  #      - protected final
  #      - static
  #      - final
- # 3）、ret-type 方法返回值类型，类如：com.zwk.model.User or com.zwk.model.# or com.zwk..#， 基本类型 int long...
+ # 3）、ret-type 方法返回值类型，类如：com.zwk.model.User or com.zwk.model.* or com.zwk..*， 基本类型 int long...
  # 4）、declare-type 声明的类型 同返回值类型
- # 5）、method-name 方法名称 可以是#代表任意方法名 可以前缀星号，也可以后缀星号 例如：#Test 以Test结尾、 get# 以get开头
+ # 5）、method-name 方法名称 可以是*代表任意方法名 可以前缀星号，也可以后缀星号 例如：*Test 以Test结尾、 get* 以get开头
  # 6）、params 参数 多个参数以逗号分隔 例如
- #      - ##                        匹配任意参数
+ #      - **                        匹配任意参数
  #      - java.lang.Object,int      匹配Object和int
- #      - com.zwk.model.#,int       匹配com.zwk.model包下的任意类型和int
- #      - com.zwk..#,int            匹配com.zwk包及子包下的任意类型和int
- #      - com.zwk.model.#,int,##    前两个参数匹配com.zwk.model包下的任意类和int，后面为任意参数
+ #      - com.zwk.model.*,int       匹配com.zwk.model包下的任意类型和int
+ #      - com.zwk..*,int            匹配com.zwk包及子包下的任意类型和int
+ #      - com.zwk.model.*,int,**    前两个参数匹配com.zwk.model包下的任意类和int，后面为任意参数
  # 7）、throws 异常 多个异常以逗号分隔 参见params的声明方式
  # 8）、指定handler则采用当前的handler
  # ---------------------------------------------------------------------------------------------------------------------
@@ -70,8 +70,8 @@
  # 声明格式：target fullQualifiedClassName (handler fullQualifiedClassName.methodName)?
  # 类的全限定名，多个以逗号分隔，指定handler则采用当前的handler
  #      - com.zwk.model.User        匹配com.zwk.model.User类型
- #      - com.zwk.model.#           匹配com.zwk.model包下的任意类型
- #      - com.zwk..#                匹配com.zwk包及子包下的任意类型
+ #      - com.zwk.model.*           匹配com.zwk.model包下的任意类型
+ #      - com.zwk..*                匹配com.zwk包及子包下的任意类型
  # ---------------------------------------------------------------------------------------------------------------------
  # 4、@target 目标类上的注解，参见target的声明
  # 声明格式：@target fullQualifiedClassName (handler fullQualifiedClassName.methodName)?
